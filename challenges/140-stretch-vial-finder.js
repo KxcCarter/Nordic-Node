@@ -22,42 +22,31 @@
 // then move on to boxes in boxes in boxes. Boxes in boxes will be a big stretch.
 // You may want to research recursion if you get this far.
 
+let vialCount = 0;
+let timesCalled = 0;
 
+// let box = [
+//     ['vial', ['dog food', 'dog food'], 'taco'], 'vial', ['vial', 'vial', ['vial']]
+// ]
 
-module.exports = function(box) {
+const checkBox = (box) => {
     // YOUR CODE HERE
-    let vialCount = 0;
-
-
-    console.log('in checkBox');
-
+    console.log('checkBox has been called');
     for (let each of box) {
-        console.log('in for loop');
-
-        // if (each == "vial") {
-        //     vialCount++;
-        //     console.log('in if string check');
-
-        // } else if (typeof each === 'array') {
-        //     console.log('in else if');
-
-        //     checkBox(each);
-        // }
-        console.log(typeof each);
-
-
-
-
-
-
-
-
+        console.log('in for loop, testing: ' + typeof each);
+        if (typeof each === "object") checkBox(each);
+        if (each === "vial") {
+            vialCount++;
+            console.log('Vial found! + 1!');
+        }
+        console.log('just tested: ' + typeof each);
     }
-
     console.log(`end of checkBox ${vialCount}`);
-
+    timesCalled++;
+    console.log(timesCalled);
     return vialCount;
-
 }
+
+module.exports = checkBox;
 
 // Don't forget to write tests!

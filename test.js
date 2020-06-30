@@ -3,8 +3,10 @@ const nodeObjects = require('./challenges/120-node-objects');
 const nodeFunction = require('./challenges/130-node-function');
 const boxSearcher = require('./challenges/140-stretch-vial-finder');
 
+let vial = 'vial';
+
 let box = [
-    ['vial', ['dog food', 'dog food'], 'taco'], 'vial', ['vial', 'vial', ['vial']]
+    ['vial', ['dog food', 'dog food'], 'taco'], 'vial', ['vial', vial, ['vial']]
 ]
 
 if (nodeNumbers == 20) {
